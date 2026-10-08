@@ -13,7 +13,7 @@
   <meta property="og:description" content="Detalın ölçüsünü və sayını yazın; material, fire, müddət və ilkin qiymət ekranda hesablansın.">
   <meta property="og:url" content="https://twenion.github.io/manufacturing-site-demo/">
   <meta property="og:site_name" content="Kəsim">
-  <meta name="theme-color" content="#eaf0f0">
+  <meta name="theme-color" content="#111315">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
   <script type="application/ld+json">
@@ -66,60 +66,206 @@
         <a class="nav-cta" href="teklif.html">Təklif al</a>
       </nav>
     </div>
+    <span class="cut-progress" aria-hidden="true"></span>
   </header>
 
   <main id="main">
-    <section class="workbench" aria-labelledby="page-title">
-      <div class="hero-stage">
-        <div class="hero-copy">
-          <p class="hero-label">Metal emalı · Sumqayıt</p>
-          <h1 id="page-title">Fikir sizdən.<br>Forma bizdən.</h1>
-          <p>Bir sacdan min imkan. Lazer kəsimdən son bükümə qədər, hər detal çertyojunuza uyğun.</p>
-          <div class="hero-actions"><a class="primary-button" href="#canli-hesab">Detalını hesabla <span aria-hidden="true">↗</span></a><a class="hero-link" href="imkanlar.html">İmkanları kəşf et</a></div>
-          <p class="hero-demo">Xəyali istehsalçı. İşləyən demo.</p>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="beam-dot" aria-hidden="true"></span>Sumqayıt · metal emalı sexi</p>
+        <h1 id="page-title">Çertyoj gəlir.<span>Detal ölçülüb gedir.</span></h1>
+        <p class="hero-lead">Lazer kəsim, CNC büküm, qaynaq və toz boya bir sexdə. Material, tolerans və ilkin qiymət burada açıq yazılıb, sorğu göndərməzdən əvvəl.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#canli-hesab">Detalını hesabla</a>
+          <a class="ghost-button" href="#yol">Detalın yoluna bax</a>
         </div>
-        <div class="fabrication" data-stage="cut">
-          <div class="fabrication-caption"><span>Bir detalın hekayəsi</span><span>2 mm / S235</span></div>
-          <svg class="metal-scene" viewBox="0 0 640 510" role="img" aria-labelledby="metal-title metal-desc">
-            <title id="metal-title">Sacdan hazır montaj detalına</title><desc id="metal-desc">Kəsim, büküm və səth emalını göstərən metal detal modeli.</desc>
-            <defs>
-              <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9fcfc"/><stop offset=".28" stop-color="#a1b5b9"/><stop offset=".48" stop-color="#e7eeee"/><stop offset=".72" stop-color="#81999f"/><stop offset="1" stop-color="#c9d5d7"/></linearGradient>
-              <linearGradient id="edge" x2="0" y2="1"><stop stop-color="#7a9298"/><stop offset="1" stop-color="#314f58"/></linearGradient>
-              <linearGradient id="fold-metal" x2="1" y2="0"><stop stop-color="#8ea6ac"/><stop offset=".48" stop-color="#f0f5f5"/><stop offset="1" stop-color="#6c878f"/></linearGradient>
-              <pattern id="draft-grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#a8bec3" stroke-width=".6"/></pattern>
-              <filter id="soft-shadow"><feGaussianBlur stdDeviation="14"/></filter>
-            </defs>
-            <path fill="url(#draft-grid)" opacity=".55" d="M30 325 315 160 618 335 330 502Z"/>
-            <ellipse cx="328" cy="386" rx="197" ry="43" fill="#254e5b" opacity=".16" filter="url(#soft-shadow)"/>
-            <g class="metal-object">
-              <g class="metal-base">
-                <path fill="url(#edge)" d="m116 279 231-134 190 110v12L306 403 116 292Z"/>
-                <path class="part-face" fill="url(#metal)" stroke="#f6ffff" stroke-width="1.2" d="m116 279 231-134 190 110-231 135Z"/>
-                <g fill="#385761" stroke="#b9cccf" stroke-width="3"><ellipse cx="181" cy="280" rx="15" ry="8.5"/><ellipse cx="347" cy="184" rx="15" ry="8.5"/><ellipse cx="305" cy="352" rx="15" ry="8.5"/><ellipse cx="472" cy="256" rx="15" ry="8.5"/></g>
-                <path d="m225 273 99-57 104 60-99 57Z" fill="#65818a" stroke="#f5ffff" stroke-width="2"/>
-                <path d="m225 273 99-57v9l-91 53Z" fill="#304e58"/>
-                <path class="cut-line" pathLength="100" d="m116 279 231-134 190 110-231 135Z" fill="none" stroke="#db6940" stroke-width="2.5"/>
-              </g>
-              <g class="metal-fold">
-                <path d="m116 279 231-134v-109L116 170Z" fill="url(#fold-metal)" stroke="#e8f1f2" stroke-width="1.5"/>
-                <path d="m116 279-8-5V167L339 32l8 4L116 170Z" fill="#6b858e"/>
-                <g fill="#34535e" stroke="#c0d1d4" stroke-width="2"><ellipse cx="168" cy="186" rx="10" ry="17" transform="rotate(30 168 186)"/><ellipse cx="293" cy="113" rx="10" ry="17" transform="rotate(30 293 113)"/></g>
-              </g>
-              <g class="laser-head"><path d="m313 17 36-20 34 20v60l-34 20-36-20Z" fill="#234651"/><path d="m349 37 34-20v60l-34 20Z" fill="#41636e"/><path d="m337 89 12 8 12-7v25l-12 10-12-8Z" fill="#b3c6ca"/><path d="M349 125v40" stroke="#e76a3b" stroke-width="2"/><circle cx="349" cy="166" r="7" fill="#fff7da" stroke="#e87746" stroke-width="3"/><path d="m334 163-19-5m40 17 15 14m-20-8v15m11-31 23-4" stroke="#df764a" stroke-width="2"/></g>
-            </g>
-            <g class="drawing-dimensions" fill="none" stroke="#64848e" stroke-width="1"><path d="m118 325 188 108m-188-117v20m188 88v20M337 427l211-123m-211 115v18m211-142v19"/><path d="m114 325 8-1-2 7m182 97 7 5-8 1m36-12v7l8-1m195-122 8-5-1 8"/></g>
-            <g fill="#456772" font-family="Arial, sans-serif" font-size="13"><text x="193" y="402" transform="rotate(30 193 402)">180 mm</text><text x="426" y="389" transform="rotate(-30 426 389)">320 mm</text></g>
-          </svg>
-          <p class="stage-description" data-stage-description aria-live="polite">Kontur kəsilir. Hər millimetr çertyoja uyğundur.</p>
-          <div class="stage-controls" role="group" aria-label="Detalın emal mərhələsi"><button type="button" data-process="cut" aria-pressed="true"><span>01</span> Kəsim</button><button type="button" data-process="bend" aria-pressed="false"><span>02</span> Büküm</button><button type="button" data-process="finish" aria-pressed="false"><span>03</span> Səth</button></div>
-        </div>
+        <dl class="hero-facts">
+          <div><dt>Lazer masası</dt><dd>1500 × 3000 mm</dd></div>
+          <div><dt>Dəqiqlik</dt><dd>±0,20 mm</dd></div>
+          <div><dt>Minimum sifariş</dt><dd>1 detal</dd></div>
+        </dl>
       </div>
-      <div class="hero-bottom"><p>Çertyojdan istehsala.<br>Arada heç bir sual qalmasın.</p><dl class="hero-stats"><div><dt>İş masası</dt><dd>3 × 1,5 m</dd></div><div><dt>Dəqiqlik</dt><dd>±0,20 mm</dd></div><div><dt>Minimum sifariş</dt><dd>1 detal</dd></div></dl><a class="scroll-cue" href="#atelye" aria-label="Atelyeni kəşf et">↓</a></div>
-      <section class="workshop-film" id="atelye" aria-labelledby="workshop-title"><img src="assets/img/laser-floor-v1.jpg" alt="Atelyedə fiber lazer polad sac üzərində işləyir" width="1942" height="817" loading="lazy"><div class="film-copy"><p>Materialı tanıyırıq.</p><h2 id="workshop-title">Metalın potensialını<br>üzə çıxarırıq.</h2><a href="haqqimizda.html">Atelye ilə tanış ol <span aria-hidden="true">↗</span></a></div><span class="film-note">Kəsim atelyesi / demo görüntü</span></section>
 
-      <div class="quote-intro" id="canli-hesab">
-        <div><span class="section-index">Qiymət simulyatoru</span><h2>Ölçünü dəyiş.<br>Nəticəni gör.</h2></div>
-        <p>Düzbucaqlı detal üçün material, fire, müddət və ilkin qiymət brauzerinizdə hesablanır. Heç bir məlumat göndərilmir.</p>
+      <figure class="bed" data-bed>
+        <div class="bed-top">
+          <span><i class="status-led" aria-hidden="true"></i>LZR-01 · fiber 6 kW</span>
+          <span class="bed-material">S235 · 3 mm · 1500 × 3000</span>
+          <button class="bed-toggle" type="button" data-bed-toggle aria-pressed="false" aria-label="Animasiyanı dayandır" hidden>Dayandır</button>
+        </div>
+        <div class="bed-screen">
+          <svg class="bed-svg" viewBox="0 0 640 360" role="img" aria-labelledby="bed-title bed-desc">
+            <title id="bed-title">Lazer masasında səkkiz kronşteyn detalının kəsimi</title>
+            <desc id="bed-desc">1500 × 3000 mm polad sacdan səkkiz montaj kronşteyni kəsilir: əvvəl daxili dəliklər, sonra xarici kontur. Qırıq xətt büküm yerini göstərir.</desc>
+            <defs>
+              <pattern id="slats" width="14" height="22" patternUnits="userSpaceOnUse"><path d="M0 22 3.5 3 7 22 10.5 3 14 22" fill="none" stroke="#3a4248" stroke-width="1.1"/></pattern>
+              <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a535a"/><stop offset=".38" stop-color="#363e44"/><stop offset=".62" stop-color="#434c53"/><stop offset="1" stop-color="#2f363b"/></linearGradient>
+              <pattern id="brush" width="640" height="4" patternUnits="userSpaceOnUse"><path d="M0 1.5h640" stroke="#ffffff" stroke-opacity=".035" stroke-width="1"/></pattern>
+              <radialGradient id="head-glow"><stop offset="0" stop-color="#fff1c9"/><stop offset=".25" stop-color="#ff8a3d" stop-opacity=".85"/><stop offset="1" stop-color="#ff5b1f" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect class="bed-frame" x="1" y="1" width="638" height="358" rx="6"/>
+            <rect x="12" y="14" width="616" height="332" fill="url(#slats)"/>
+            <g class="sheet" data-sheet>
+              <rect x="30" y="35" width="580" height="290" fill="url(#plate)"/>
+              <rect x="30" y="35" width="580" height="290" fill="url(#brush)"/>
+              <g class="nest-part" data-part="1"><path class="part-body" fill-rule="evenodd" d="M60.93 54.33H161.47L169.2 62.07V166.47A3.87 3.87 0 0 1 165.33 170.33H57.07A3.87 3.87 0 0 1 53.2 166.47V62.07ZM93.8 125.87H128.6A5.8 5.8 0 0 1 128.6 137.47H93.8A5.8 5.8 0 0 1 93.8 125.87ZM155.09 152.93A3.29 3.29 0 1 1 148.51 152.93A3.29 3.29 0 1 1 155.09 152.93M73.89 152.93A3.29 3.29 0 1 1 67.31 152.93A3.29 3.29 0 1 1 73.89 152.93M155.09 110.4A3.29 3.29 0 1 1 148.51 110.4A3.29 3.29 0 1 1 155.09 110.4M73.89 110.4A3.29 3.29 0 1 1 67.31 110.4A3.29 3.29 0 1 1 73.89 110.4M142.71 73.67A2.51 2.51 0 1 1 137.69 73.67A2.51 2.51 0 1 1 142.71 73.67M84.71 73.67A2.51 2.51 0 1 1 79.69 73.67A2.51 2.51 0 1 1 84.71 73.67"/><path class="bend-mark" d="M53.2 93H169.2"/><path class="kerf" d="M84.71 73.67A2.51 2.51 0 1 1 79.69 73.67A2.51 2.51 0 1 1 84.71 73.67" data-g="G00 X283.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M142.71 73.67A2.51 2.51 0 1 1 137.69 73.67A2.51 2.51 0 1 1 142.71 73.67" data-g="G00 X583.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M73.89 110.4A3.29 3.29 0 1 1 67.31 110.4A3.29 3.29 0 1 1 73.89 110.4" data-g="G00 X227.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M155.09 110.4A3.29 3.29 0 1 1 148.51 110.4A3.29 3.29 0 1 1 155.09 110.4" data-g="G00 X647.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M73.89 152.93A3.29 3.29 0 1 1 67.31 152.93A3.29 3.29 0 1 1 73.89 152.93" data-g="G00 X227.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M155.09 152.93A3.29 3.29 0 1 1 148.51 152.93A3.29 3.29 0 1 1 155.09 152.93" data-g="G00 X647.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M93.8 125.87H128.6A5.8 5.8 0 0 1 128.6 137.47H93.8A5.8 5.8 0 0 1 93.8 125.87Z" data-g="G00 X330.0 Y470.0|M03|G01 X510.0|G02 X510.0 Y530.0 I0.0 J30.0|G01 X330.0|G02 X330.0 Y470.0 I0.0 J-30.0|M05"/><path class="kerf" d="M60.93 54.33H161.47L169.2 62.07V166.47A3.87 3.87 0 0 1 165.33 170.33H57.07A3.87 3.87 0 0 1 53.2 166.47V62.07Z" data-g="G00 X160.0 Y100.0|M03|G01 X680.0|G01 X720.0 Y140.0|G01 Y680.0|G02 X700.0 Y700.0 I-20.0 J0.0|G01 X140.0|G02 X120.0 Y680.0 I0.0 J-20.0|G01 Y140.0|G01 X160.0 Y100.0|M05"/></g>
+              <g class="nest-part" data-part="2"><path class="part-body" fill-rule="evenodd" d="M200.13 54.33H300.67L308.4 62.07V166.47A3.87 3.87 0 0 1 304.53 170.33H196.27A3.87 3.87 0 0 1 192.4 166.47V62.07ZM233 125.87H267.8A5.8 5.8 0 0 1 267.8 137.47H233A5.8 5.8 0 0 1 233 125.87ZM294.29 152.93A3.29 3.29 0 1 1 287.71 152.93A3.29 3.29 0 1 1 294.29 152.93M213.09 152.93A3.29 3.29 0 1 1 206.51 152.93A3.29 3.29 0 1 1 213.09 152.93M294.29 110.4A3.29 3.29 0 1 1 287.71 110.4A3.29 3.29 0 1 1 294.29 110.4M213.09 110.4A3.29 3.29 0 1 1 206.51 110.4A3.29 3.29 0 1 1 213.09 110.4M281.91 73.67A2.51 2.51 0 1 1 276.89 73.67A2.51 2.51 0 1 1 281.91 73.67M223.91 73.67A2.51 2.51 0 1 1 218.89 73.67A2.51 2.51 0 1 1 223.91 73.67"/><path class="bend-mark" d="M192.4 93H308.4"/><path class="kerf" d="M223.91 73.67A2.51 2.51 0 1 1 218.89 73.67A2.51 2.51 0 1 1 223.91 73.67" data-g="G00 X1003.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M281.91 73.67A2.51 2.51 0 1 1 276.89 73.67A2.51 2.51 0 1 1 281.91 73.67" data-g="G00 X1303.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M213.09 110.4A3.29 3.29 0 1 1 206.51 110.4A3.29 3.29 0 1 1 213.09 110.4" data-g="G00 X947.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M294.29 110.4A3.29 3.29 0 1 1 287.71 110.4A3.29 3.29 0 1 1 294.29 110.4" data-g="G00 X1367.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M213.09 152.93A3.29 3.29 0 1 1 206.51 152.93A3.29 3.29 0 1 1 213.09 152.93" data-g="G00 X947.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M294.29 152.93A3.29 3.29 0 1 1 287.71 152.93A3.29 3.29 0 1 1 294.29 152.93" data-g="G00 X1367.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M233 125.87H267.8A5.8 5.8 0 0 1 267.8 137.47H233A5.8 5.8 0 0 1 233 125.87Z" data-g="G00 X1050.0 Y470.0|M03|G01 X1230.0|G02 X1230.0 Y530.0 I0.0 J30.0|G01 X1050.0|G02 X1050.0 Y470.0 I0.0 J-30.0|M05"/><path class="kerf" d="M200.13 54.33H300.67L308.4 62.07V166.47A3.87 3.87 0 0 1 304.53 170.33H196.27A3.87 3.87 0 0 1 192.4 166.47V62.07Z" data-g="G00 X880.0 Y100.0|M03|G01 X1400.0|G01 X1440.0 Y140.0|G01 Y680.0|G02 X1420.0 Y700.0 I-20.0 J0.0|G01 X860.0|G02 X840.0 Y680.0 I0.0 J-20.0|G01 Y140.0|G01 X880.0 Y100.0|M05"/></g>
+              <g class="nest-part" data-part="3"><path class="part-body" fill-rule="evenodd" d="M339.33 54.33H439.87L447.6 62.07V166.47A3.87 3.87 0 0 1 443.73 170.33H335.47A3.87 3.87 0 0 1 331.6 166.47V62.07ZM372.2 125.87H407A5.8 5.8 0 0 1 407 137.47H372.2A5.8 5.8 0 0 1 372.2 125.87ZM433.49 152.93A3.29 3.29 0 1 1 426.91 152.93A3.29 3.29 0 1 1 433.49 152.93M352.29 152.93A3.29 3.29 0 1 1 345.71 152.93A3.29 3.29 0 1 1 352.29 152.93M433.49 110.4A3.29 3.29 0 1 1 426.91 110.4A3.29 3.29 0 1 1 433.49 110.4M352.29 110.4A3.29 3.29 0 1 1 345.71 110.4A3.29 3.29 0 1 1 352.29 110.4M421.11 73.67A2.51 2.51 0 1 1 416.09 73.67A2.51 2.51 0 1 1 421.11 73.67M363.11 73.67A2.51 2.51 0 1 1 358.09 73.67A2.51 2.51 0 1 1 363.11 73.67"/><path class="bend-mark" d="M331.6 93H447.6"/><path class="kerf" d="M363.11 73.67A2.51 2.51 0 1 1 358.09 73.67A2.51 2.51 0 1 1 363.11 73.67" data-g="G00 X1723.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M421.11 73.67A2.51 2.51 0 1 1 416.09 73.67A2.51 2.51 0 1 1 421.11 73.67" data-g="G00 X2023.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M352.29 110.4A3.29 3.29 0 1 1 345.71 110.4A3.29 3.29 0 1 1 352.29 110.4" data-g="G00 X1667.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M433.49 110.4A3.29 3.29 0 1 1 426.91 110.4A3.29 3.29 0 1 1 433.49 110.4" data-g="G00 X2087.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M352.29 152.93A3.29 3.29 0 1 1 345.71 152.93A3.29 3.29 0 1 1 352.29 152.93" data-g="G00 X1667.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M433.49 152.93A3.29 3.29 0 1 1 426.91 152.93A3.29 3.29 0 1 1 433.49 152.93" data-g="G00 X2087.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M372.2 125.87H407A5.8 5.8 0 0 1 407 137.47H372.2A5.8 5.8 0 0 1 372.2 125.87Z" data-g="G00 X1770.0 Y470.0|M03|G01 X1950.0|G02 X1950.0 Y530.0 I0.0 J30.0|G01 X1770.0|G02 X1770.0 Y470.0 I0.0 J-30.0|M05"/><path class="kerf" d="M339.33 54.33H439.87L447.6 62.07V166.47A3.87 3.87 0 0 1 443.73 170.33H335.47A3.87 3.87 0 0 1 331.6 166.47V62.07Z" data-g="G00 X1600.0 Y100.0|M03|G01 X2120.0|G01 X2160.0 Y140.0|G01 Y680.0|G02 X2140.0 Y700.0 I-20.0 J0.0|G01 X1580.0|G02 X1560.0 Y680.0 I0.0 J-20.0|G01 Y140.0|G01 X1600.0 Y100.0|M05"/></g>
+              <g class="nest-part" data-part="4"><path class="part-body" fill-rule="evenodd" d="M478.53 54.33H579.07L586.8 62.07V166.47A3.87 3.87 0 0 1 582.93 170.33H474.67A3.87 3.87 0 0 1 470.8 166.47V62.07ZM511.4 125.87H546.2A5.8 5.8 0 0 1 546.2 137.47H511.4A5.8 5.8 0 0 1 511.4 125.87ZM572.69 152.93A3.29 3.29 0 1 1 566.11 152.93A3.29 3.29 0 1 1 572.69 152.93M491.49 152.93A3.29 3.29 0 1 1 484.91 152.93A3.29 3.29 0 1 1 491.49 152.93M572.69 110.4A3.29 3.29 0 1 1 566.11 110.4A3.29 3.29 0 1 1 572.69 110.4M491.49 110.4A3.29 3.29 0 1 1 484.91 110.4A3.29 3.29 0 1 1 491.49 110.4M560.31 73.67A2.51 2.51 0 1 1 555.29 73.67A2.51 2.51 0 1 1 560.31 73.67M502.31 73.67A2.51 2.51 0 1 1 497.29 73.67A2.51 2.51 0 1 1 502.31 73.67"/><path class="bend-mark" d="M470.8 93H586.8"/><path class="kerf" d="M502.31 73.67A2.51 2.51 0 1 1 497.29 73.67A2.51 2.51 0 1 1 502.31 73.67" data-g="G00 X2443.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M560.31 73.67A2.51 2.51 0 1 1 555.29 73.67A2.51 2.51 0 1 1 560.31 73.67" data-g="G00 X2743.0 Y200.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M491.49 110.4A3.29 3.29 0 1 1 484.91 110.4A3.29 3.29 0 1 1 491.49 110.4" data-g="G00 X2387.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M572.69 110.4A3.29 3.29 0 1 1 566.11 110.4A3.29 3.29 0 1 1 572.69 110.4" data-g="G00 X2807.0 Y390.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M491.49 152.93A3.29 3.29 0 1 1 484.91 152.93A3.29 3.29 0 1 1 491.49 152.93" data-g="G00 X2387.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M572.69 152.93A3.29 3.29 0 1 1 566.11 152.93A3.29 3.29 0 1 1 572.69 152.93" data-g="G00 X2807.0 Y610.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M511.4 125.87H546.2A5.8 5.8 0 0 1 546.2 137.47H511.4A5.8 5.8 0 0 1 511.4 125.87Z" data-g="G00 X2490.0 Y470.0|M03|G01 X2670.0|G02 X2670.0 Y530.0 I0.0 J30.0|G01 X2490.0|G02 X2490.0 Y470.0 I0.0 J-30.0|M05"/><path class="kerf" d="M478.53 54.33H579.07L586.8 62.07V166.47A3.87 3.87 0 0 1 582.93 170.33H474.67A3.87 3.87 0 0 1 470.8 166.47V62.07Z" data-g="G00 X2320.0 Y100.0|M03|G01 X2840.0|G01 X2880.0 Y140.0|G01 Y680.0|G02 X2860.0 Y700.0 I-20.0 J0.0|G01 X2300.0|G02 X2280.0 Y680.0 I0.0 J-20.0|G01 Y140.0|G01 X2320.0 Y100.0|M05"/></g>
+              <g class="nest-part" data-part="5"><path class="part-body" fill-rule="evenodd" d="M60.93 189.67H161.47L169.2 197.4V301.8A3.87 3.87 0 0 1 165.33 305.67H57.07A3.87 3.87 0 0 1 53.2 301.8V197.4ZM93.8 261.2H128.6A5.8 5.8 0 0 1 128.6 272.8H93.8A5.8 5.8 0 0 1 93.8 261.2ZM155.09 288.27A3.29 3.29 0 1 1 148.51 288.27A3.29 3.29 0 1 1 155.09 288.27M73.89 288.27A3.29 3.29 0 1 1 67.31 288.27A3.29 3.29 0 1 1 73.89 288.27M155.09 245.73A3.29 3.29 0 1 1 148.51 245.73A3.29 3.29 0 1 1 155.09 245.73M73.89 245.73A3.29 3.29 0 1 1 67.31 245.73A3.29 3.29 0 1 1 73.89 245.73M142.71 209A2.51 2.51 0 1 1 137.69 209A2.51 2.51 0 1 1 142.71 209M84.71 209A2.51 2.51 0 1 1 79.69 209A2.51 2.51 0 1 1 84.71 209"/><path class="bend-mark" d="M53.2 228.33H169.2"/><path class="kerf" d="M84.71 209A2.51 2.51 0 1 1 79.69 209A2.51 2.51 0 1 1 84.71 209" data-g="G00 X283.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M142.71 209A2.51 2.51 0 1 1 137.69 209A2.51 2.51 0 1 1 142.71 209" data-g="G00 X583.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M73.89 245.73A3.29 3.29 0 1 1 67.31 245.73A3.29 3.29 0 1 1 73.89 245.73" data-g="G00 X227.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M155.09 245.73A3.29 3.29 0 1 1 148.51 245.73A3.29 3.29 0 1 1 155.09 245.73" data-g="G00 X647.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M73.89 288.27A3.29 3.29 0 1 1 67.31 288.27A3.29 3.29 0 1 1 73.89 288.27" data-g="G00 X227.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M155.09 288.27A3.29 3.29 0 1 1 148.51 288.27A3.29 3.29 0 1 1 155.09 288.27" data-g="G00 X647.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M93.8 261.2H128.6A5.8 5.8 0 0 1 128.6 272.8H93.8A5.8 5.8 0 0 1 93.8 261.2Z" data-g="G00 X330.0 Y1170.0|M03|G01 X510.0|G02 X510.0 Y1230.0 I0.0 J30.0|G01 X330.0|G02 X330.0 Y1170.0 I0.0 J-30.0|M05"/><path class="kerf" d="M60.93 189.67H161.47L169.2 197.4V301.8A3.87 3.87 0 0 1 165.33 305.67H57.07A3.87 3.87 0 0 1 53.2 301.8V197.4Z" data-g="G00 X160.0 Y800.0|M03|G01 X680.0|G01 X720.0 Y840.0|G01 Y1380.0|G02 X700.0 Y1400.0 I-20.0 J0.0|G01 X140.0|G02 X120.0 Y1380.0 I0.0 J-20.0|G01 Y840.0|G01 X160.0 Y800.0|M05"/></g>
+              <g class="nest-part" data-part="6"><path class="part-body" fill-rule="evenodd" d="M200.13 189.67H300.67L308.4 197.4V301.8A3.87 3.87 0 0 1 304.53 305.67H196.27A3.87 3.87 0 0 1 192.4 301.8V197.4ZM233 261.2H267.8A5.8 5.8 0 0 1 267.8 272.8H233A5.8 5.8 0 0 1 233 261.2ZM294.29 288.27A3.29 3.29 0 1 1 287.71 288.27A3.29 3.29 0 1 1 294.29 288.27M213.09 288.27A3.29 3.29 0 1 1 206.51 288.27A3.29 3.29 0 1 1 213.09 288.27M294.29 245.73A3.29 3.29 0 1 1 287.71 245.73A3.29 3.29 0 1 1 294.29 245.73M213.09 245.73A3.29 3.29 0 1 1 206.51 245.73A3.29 3.29 0 1 1 213.09 245.73M281.91 209A2.51 2.51 0 1 1 276.89 209A2.51 2.51 0 1 1 281.91 209M223.91 209A2.51 2.51 0 1 1 218.89 209A2.51 2.51 0 1 1 223.91 209"/><path class="bend-mark" d="M192.4 228.33H308.4"/><path class="kerf" d="M223.91 209A2.51 2.51 0 1 1 218.89 209A2.51 2.51 0 1 1 223.91 209" data-g="G00 X1003.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M281.91 209A2.51 2.51 0 1 1 276.89 209A2.51 2.51 0 1 1 281.91 209" data-g="G00 X1303.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M213.09 245.73A3.29 3.29 0 1 1 206.51 245.73A3.29 3.29 0 1 1 213.09 245.73" data-g="G00 X947.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M294.29 245.73A3.29 3.29 0 1 1 287.71 245.73A3.29 3.29 0 1 1 294.29 245.73" data-g="G00 X1367.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M213.09 288.27A3.29 3.29 0 1 1 206.51 288.27A3.29 3.29 0 1 1 213.09 288.27" data-g="G00 X947.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M294.29 288.27A3.29 3.29 0 1 1 287.71 288.27A3.29 3.29 0 1 1 294.29 288.27" data-g="G00 X1367.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M233 261.2H267.8A5.8 5.8 0 0 1 267.8 272.8H233A5.8 5.8 0 0 1 233 261.2Z" data-g="G00 X1050.0 Y1170.0|M03|G01 X1230.0|G02 X1230.0 Y1230.0 I0.0 J30.0|G01 X1050.0|G02 X1050.0 Y1170.0 I0.0 J-30.0|M05"/><path class="kerf" d="M200.13 189.67H300.67L308.4 197.4V301.8A3.87 3.87 0 0 1 304.53 305.67H196.27A3.87 3.87 0 0 1 192.4 301.8V197.4Z" data-g="G00 X880.0 Y800.0|M03|G01 X1400.0|G01 X1440.0 Y840.0|G01 Y1380.0|G02 X1420.0 Y1400.0 I-20.0 J0.0|G01 X860.0|G02 X840.0 Y1380.0 I0.0 J-20.0|G01 Y840.0|G01 X880.0 Y800.0|M05"/></g>
+              <g class="nest-part" data-part="7"><path class="part-body" fill-rule="evenodd" d="M339.33 189.67H439.87L447.6 197.4V301.8A3.87 3.87 0 0 1 443.73 305.67H335.47A3.87 3.87 0 0 1 331.6 301.8V197.4ZM372.2 261.2H407A5.8 5.8 0 0 1 407 272.8H372.2A5.8 5.8 0 0 1 372.2 261.2ZM433.49 288.27A3.29 3.29 0 1 1 426.91 288.27A3.29 3.29 0 1 1 433.49 288.27M352.29 288.27A3.29 3.29 0 1 1 345.71 288.27A3.29 3.29 0 1 1 352.29 288.27M433.49 245.73A3.29 3.29 0 1 1 426.91 245.73A3.29 3.29 0 1 1 433.49 245.73M352.29 245.73A3.29 3.29 0 1 1 345.71 245.73A3.29 3.29 0 1 1 352.29 245.73M421.11 209A2.51 2.51 0 1 1 416.09 209A2.51 2.51 0 1 1 421.11 209M363.11 209A2.51 2.51 0 1 1 358.09 209A2.51 2.51 0 1 1 363.11 209"/><path class="bend-mark" d="M331.6 228.33H447.6"/><path class="kerf" d="M363.11 209A2.51 2.51 0 1 1 358.09 209A2.51 2.51 0 1 1 363.11 209" data-g="G00 X1723.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M421.11 209A2.51 2.51 0 1 1 416.09 209A2.51 2.51 0 1 1 421.11 209" data-g="G00 X2023.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M352.29 245.73A3.29 3.29 0 1 1 345.71 245.73A3.29 3.29 0 1 1 352.29 245.73" data-g="G00 X1667.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M433.49 245.73A3.29 3.29 0 1 1 426.91 245.73A3.29 3.29 0 1 1 433.49 245.73" data-g="G00 X2087.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M352.29 288.27A3.29 3.29 0 1 1 345.71 288.27A3.29 3.29 0 1 1 352.29 288.27" data-g="G00 X1667.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M433.49 288.27A3.29 3.29 0 1 1 426.91 288.27A3.29 3.29 0 1 1 433.49 288.27" data-g="G00 X2087.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M372.2 261.2H407A5.8 5.8 0 0 1 407 272.8H372.2A5.8 5.8 0 0 1 372.2 261.2Z" data-g="G00 X1770.0 Y1170.0|M03|G01 X1950.0|G02 X1950.0 Y1230.0 I0.0 J30.0|G01 X1770.0|G02 X1770.0 Y1170.0 I0.0 J-30.0|M05"/><path class="kerf" d="M339.33 189.67H439.87L447.6 197.4V301.8A3.87 3.87 0 0 1 443.73 305.67H335.47A3.87 3.87 0 0 1 331.6 301.8V197.4Z" data-g="G00 X1600.0 Y800.0|M03|G01 X2120.0|G01 X2160.0 Y840.0|G01 Y1380.0|G02 X2140.0 Y1400.0 I-20.0 J0.0|G01 X1580.0|G02 X1560.0 Y1380.0 I0.0 J-20.0|G01 Y840.0|G01 X1600.0 Y800.0|M05"/></g>
+              <g class="nest-part" data-part="8"><path class="part-body" fill-rule="evenodd" d="M478.53 189.67H579.07L586.8 197.4V301.8A3.87 3.87 0 0 1 582.93 305.67H474.67A3.87 3.87 0 0 1 470.8 301.8V197.4ZM511.4 261.2H546.2A5.8 5.8 0 0 1 546.2 272.8H511.4A5.8 5.8 0 0 1 511.4 261.2ZM572.69 288.27A3.29 3.29 0 1 1 566.11 288.27A3.29 3.29 0 1 1 572.69 288.27M491.49 288.27A3.29 3.29 0 1 1 484.91 288.27A3.29 3.29 0 1 1 491.49 288.27M572.69 245.73A3.29 3.29 0 1 1 566.11 245.73A3.29 3.29 0 1 1 572.69 245.73M491.49 245.73A3.29 3.29 0 1 1 484.91 245.73A3.29 3.29 0 1 1 491.49 245.73M560.31 209A2.51 2.51 0 1 1 555.29 209A2.51 2.51 0 1 1 560.31 209M502.31 209A2.51 2.51 0 1 1 497.29 209A2.51 2.51 0 1 1 502.31 209"/><path class="bend-mark" d="M470.8 228.33H586.8"/><path class="kerf" d="M502.31 209A2.51 2.51 0 1 1 497.29 209A2.51 2.51 0 1 1 502.31 209" data-g="G00 X2443.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M560.31 209A2.51 2.51 0 1 1 555.29 209A2.51 2.51 0 1 1 560.31 209" data-g="G00 X2743.0 Y900.0|M03|G02 I-13.0 J0.0|M05"/><path class="kerf" d="M491.49 245.73A3.29 3.29 0 1 1 484.91 245.73A3.29 3.29 0 1 1 491.49 245.73" data-g="G00 X2387.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M572.69 245.73A3.29 3.29 0 1 1 566.11 245.73A3.29 3.29 0 1 1 572.69 245.73" data-g="G00 X2807.0 Y1090.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M491.49 288.27A3.29 3.29 0 1 1 484.91 288.27A3.29 3.29 0 1 1 491.49 288.27" data-g="G00 X2387.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M572.69 288.27A3.29 3.29 0 1 1 566.11 288.27A3.29 3.29 0 1 1 572.69 288.27" data-g="G00 X2807.0 Y1310.0|M03|G02 I-17.0 J0.0|M05"/><path class="kerf" d="M511.4 261.2H546.2A5.8 5.8 0 0 1 546.2 272.8H511.4A5.8 5.8 0 0 1 511.4 261.2Z" data-g="G00 X2490.0 Y1170.0|M03|G01 X2670.0|G02 X2670.0 Y1230.0 I0.0 J30.0|G01 X2490.0|G02 X2490.0 Y1170.0 I0.0 J-30.0|M05"/><path class="kerf" d="M478.53 189.67H579.07L586.8 197.4V301.8A3.87 3.87 0 0 1 582.93 305.67H474.67A3.87 3.87 0 0 1 470.8 301.8V197.4Z" data-g="G00 X2320.0 Y800.0|M03|G01 X2840.0|G01 X2880.0 Y840.0|G01 Y1380.0|G02 X2860.0 Y1400.0 I-20.0 J0.0|G01 X2300.0|G02 X2280.0 Y1380.0 I0.0 J-20.0|G01 Y840.0|G01 X2320.0 Y800.0|M05"/></g>
+            </g>
+            <g class="bed-dims" aria-hidden="true"><path d="M30 25h580M30 21v8M610 21v8M20 35v290M16 35h8M16 325h8"/><text x="320" y="20" text-anchor="middle">3000 mm</text><text x="14" y="180" text-anchor="middle" transform="rotate(-90 14 180)">1500 mm</text></g>
+            <g class="laser-head" data-head transform="translate(-40 -40)"><circle r="16" fill="url(#head-glow)"/><circle r="2.4" fill="#fff6dd"/><path d="M-9 0h-6M9 0h6M0-9v-6M0 9v6" stroke="#ffb27a" stroke-width="1"/></g>
+          </svg>
+          <canvas class="sparks" data-sparks aria-hidden="true"></canvas>
+        </div>
+        <figcaption class="bed-hud">
+          <div class="hud-cell hud-coords"><span>Mövqe</span><strong><b>X</b> <output data-hud-x>2400,0</output> <b>Y</b> <output data-hud-y>1300,0</output></strong></div>
+          <div class="hud-cell"><span>Rejim</span><strong data-hud-mode>Sac hazırdır</strong></div>
+          <div class="hud-cell"><span>Detal</span><strong data-hud-part>8 / 8</strong></div>
+          <ol class="gcode" data-gcode aria-hidden="true"><li>N0810 G01 X2400.0 Y1300.0</li><li>N0820 M05</li><li class="is-current">N0830 M30</li></ol>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="ruler" aria-label="Əsas istehsal göstəriciləri">
+      <dl>
+        <div><dt>Qara polad</dt><dd>0,8–16 mm</dd></div>
+        <div><dt>Paslanmaz</dt><dd>0,8–8 mm</dd></div>
+        <div><dt>Alüminium</dt><dd>1–6 mm</dd></div>
+        <div><dt>Büküm</dt><dd>2200 mm · 80 t</dd></div>
+        <div><dt>Toz boya</dt><dd>2,5 m-dək</dd></div>
+      </dl>
+    </section>
+
+    <section class="journey" id="yol" aria-labelledby="journey-title" data-journey>
+      <div class="journey-sticky">
+        <header class="journey-head">
+          <p class="eyebrow">Bir detalın yolu · iş AZ-2610-021</p>
+          <h2 id="journey-title">Bir sac, beş əməliyyat, bir protokol.</h2>
+        </header>
+        <div class="journey-grid">
+          <ol class="journey-steps">
+            <li class="journey-step" data-step="0">
+              <span class="step-no">01</span>
+              <div>
+                <h3>Lazer kəsim</h3>
+                <div class="step-body"><p>Fiber lazer DXF konturunu izləyir: əvvəl daxili dəliklər, sonra xarici kontur. Qırıq xətt bükümün yeridir, kəsilmir.</p>
+                <dl class="step-specs"><div><dt>Masa</dt><dd>1500 × 3000 mm</dd></div><div><dt>Polad</dt><dd>16 mm-dək</dd></div><div><dt>Tolerans</dt><dd>±0,20 mm</dd></div></dl>
+                <a class="text-link" href="lazer-kesim.html">Lazer kəsim hədləri</a></div>
+              </div>
+            </li>
+            <li class="journey-step" data-step="1">
+              <span class="step-no">02</span>
+              <div>
+                <h3>CNC büküm</h3>
+                <div class="step-body"><p>Flanş presdə 90°-yə qalxır. İlk detalda bucaq ölçülür; seriya yalnız ondan sonra davam edir.</p>
+                <dl class="step-specs"><div><dt>İş eni</dt><dd>2200 mm</dd></div><div><dt>Güc</dt><dd>80 ton</dd></div><div><dt>Bucaq</dt><dd>±0,5°</dd></div></dl>
+                <a class="text-link" href="cnc-bukum.html">Büküm hədləri</a></div>
+              </div>
+            </li>
+            <li class="journey-step" data-step="2">
+              <span class="step-no">03</span>
+              <div>
+                <h3>MIG qaynaq</h3>
+                <div class="step-body"><p>Bərkidici üçbucaq küncə qaynaqlanır. Tikiş soyuyandan sonra vizual yoxlanır.</p>
+                <dl class="step-specs"><div><dt>MIG/MAG</dt><dd>350 A-dək</dd></div><div><dt>Qəbul</dt><dd>ISO 5817-C</dd></div><div><dt>Vizual</dt><dd>100%</dd></div></dl>
+                <a class="text-link" href="qaynaq.html">Qaynaq hədləri</a></div>
+              </div>
+            </li>
+            <li class="journey-step" data-step="3">
+              <span class="step-no">04</span>
+              <div>
+                <h3>Toz boya</h3>
+                <div class="step-body"><p>Səth hazırlanır, RAL 5015 toz örtük çəkilir və sobada bişirilir. Qalınlıq bir neçə nöqtədə ölçülür.</p>
+                <dl class="step-specs"><div><dt>Örtük</dt><dd>60–100 μm</dd></div><div><dt>Rəng</dt><dd>RAL kataloqu</dd></div><div><dt>Müddət</dt><dd>48 saat</dd></div></dl>
+                <a class="text-link" href="toz-boya.html">Toz boya hədləri</a></div>
+              </div>
+            </li>
+            <li class="journey-step" data-step="4">
+              <span class="step-no">05</span>
+              <div>
+                <h3>Ölçü nəzarəti</h3>
+                <div class="step-body"><p>İlk detalın kritik ölçüləri protokola yazılır: nominal, faktiki, tolerans, qərar. Partiya bu protokolla bağlanır.</p>
+                <dl class="step-specs"><div><dt>İlk detal</dt><dd>bütün ölçülər</dd></div><div><dt>Partiya</dt><dd>hər 25 ədəd</dd></div><div><dt>Protokol</dt><dd>detalla gedir</dd></div></dl>
+                <a class="text-link" href="keyfiyyet.html">Nümunə protokol</a></div>
+              </div>
+            </li>
+          </ol>
+
+          <div class="journey-visual" aria-hidden="true">
+            <div class="scene">
+              <div class="rig">
+                <div class="shadow"></div>
+                <div class="skeleton"></div>
+                <div class="blank">
+                  <div class="flange face">
+                    <div class="skin"><span class="hole" data-hole="6" style="left:25%;top:50%"></span><span class="hole" data-hole="7" style="left:75%;top:50%"></span><span class="coat"></span></div>
+                    <i class="edge edge-top"></i><i class="edge edge-left"></i><i class="edge edge-right"></i>
+                  </div>
+                  <div class="base face">
+                    <div class="skin">
+                      <span class="hole hole-lg" data-hole="0" style="left:15%;top:22.5%"></span><span class="hole hole-lg" data-hole="1" style="left:85%;top:22.5%"></span><span class="hole hole-lg" data-hole="2" style="left:15%;top:77.5%"></span><span class="hole hole-lg" data-hole="3" style="left:85%;top:77.5%"></span><span class="slot" data-hole="4"></span>
+                      <span class="coat"></span>
+                      <svg class="dims" viewBox="0 0 600 400"><path d="M0 372H600M0 358v28M600 358v28M8 366 0 372l8 6M592 366l8 6-8 6"/><text x="300" y="360" text-anchor="middle">600,06</text></svg>
+                    </div>
+                    <i class="edge edge-front"></i><i class="edge edge-left"></i><i class="edge edge-right"></i>
+                    <div class="gusset"><i class="bead bead-v"></i><i class="bead bead-h"></i></div>
+                  </div>
+                  <div class="kerf-layer">
+                    <svg viewBox="0 0 600 600">
+                      <path class="bend-line" d="M0 200H600"/>
+                      <path class="j-kerf" d="M163 100A13 13 0 1 1 137 100A13 13 0 1 1 163 100"/>
+                      <path class="j-kerf" d="M463 100A13 13 0 1 1 437 100A13 13 0 1 1 463 100"/>
+                      <path class="j-kerf" d="M107 290A17 17 0 1 1 73 290A17 17 0 1 1 107 290"/>
+                      <path class="j-kerf" d="M527 290A17 17 0 1 1 493 290A17 17 0 1 1 527 290"/>
+                      <path class="j-kerf" d="M107 510A17 17 0 1 1 73 510A17 17 0 1 1 107 510"/>
+                      <path class="j-kerf" d="M527 510A17 17 0 1 1 493 510A17 17 0 1 1 527 510"/>
+                      <path class="j-kerf" d="M210 370H390A30 30 0 0 1 390 430H210A30 30 0 0 1 210 370Z"/>
+                      <path class="j-kerf" d="M40 0H560L600 40V580A20 20 0 0 1 580 600H20A20 20 0 0 1 0 580V40Z"/>
+                    </svg>
+                    <span class="j-head"><i class="beam"></i><i class="beam beam-b"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="job-card">
+              <p><span>İş kartı</span><strong>AZ-2610-021</strong></p>
+              <p class="job-part">Dayaq kronşteyni · S235 3 mm</p>
+              <ol class="stamps"><li data-stamp="0">LZR</li><li data-stamp="1">BKM</li><li data-stamp="2">QYN</li><li data-stamp="3">BYA</li><li data-stamp="4">ÖLÇ</li></ol>
+            </div>
+            <div class="measure-card">
+              <p class="measure-title">İlk detal protokolu</p>
+              <dl>
+                <div data-measure="0"><dt>En</dt><dd><span class="nominal">600,00</span><span class="actual">600,06</span> mm</dd></div>
+                <div data-measure="1"><dt>Flanş</dt><dd><span class="nominal">200,00</span><span class="actual">199,88</span> mm</dd></div>
+                <div data-measure="2"><dt>Bucaq</dt><dd><span class="nominal">90,0</span><span class="actual">89,8</span>°</dd></div>
+                <div data-measure="3"><dt>Örtük</dt><dd><span class="nominal">80</span><span class="actual">84</span> μm</dd></div>
+              </dl>
+              <p class="verdict">Qəbul</p>
+            </div>
+          </div>
+        </div>
+        <div class="journey-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <section class="workshop-film" id="atelye" aria-labelledby="workshop-title">
+      <img src="assets/img/laser-floor-v1.jpg" alt="Atelyedə fiber lazer polad sac üzərində işləyir" width="1942" height="817" loading="lazy">
+      <div class="film-copy">
+        <p class="eyebrow">Sumqayıt Sənaye Parkı · 850 m²</p>
+        <h2 id="workshop-title">Bir dam altında dörd proses.<br>Detal podratçıdan podratçıya getmir.</h2>
+        <a class="text-link" href="haqqimizda.html">İş qaydamız</a>
+      </div>
+      <span class="film-note">Kəsim atelyesi / demo görüntü</span>
+    </section>
+
+    <section class="quote" id="canli-hesab" aria-labelledby="quote-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Qiymət simulyatoru</p><h2 id="quote-title">Ölçünü dəyiş.<br>Sac özü yerləşsin.</h2></div>
+        <p>Düzbucaqlı detal üçün yerləşmə, fire, kəsim yolu, müddət və ilkin qiymət brauzerinizdə hesablanır. Heç bir məlumat göndərilmir.</p>
       </div>
 
       <div class="quote-bench">
@@ -179,19 +325,21 @@
             <svg class="sheet-map" viewBox="0 0 600 360" role="img" aria-labelledby="sheet-title sheet-desc">
               <title id="sheet-title">Sac üzərində detal yerləşdirmə planı</title>
               <desc id="sheet-desc">Seçilən ölçüdə detalların 1500 millimetrə 3000 millimetrlik sac üzərində yerləşməsi.</desc>
-              <defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="currentColor" stroke-width="0.6"/></pattern></defs>
-              <rect class="sheet-grid" x="1" y="1" width="598" height="358" rx="2" fill="url(#grid)"/>
+              <defs><pattern id="bed-slats" width="12" height="18" patternUnits="userSpaceOnUse"><path d="M0 18 3 2 6 18 9 2 12 18" fill="none" stroke="#353c42" stroke-width="1"/></pattern></defs>
+              <rect x="0" y="0" width="600" height="360" rx="4" fill="url(#bed-slats)"/>
+              <rect class="sheet-plate" x="30" y="22" width="548" height="304"/>
               <g data-parts></g>
-              <path class="dimension-line" d="M1 350h598M12 343l-11 7 11 7M588 343l11 7-11 7"/>
-              <text class="dimension-text" x="300" y="342" text-anchor="middle">3000 mm</text>
-              <path class="dimension-line" d="M10 1v358M3 12l7-11 7 11M3 348l7 11 7-11"/>
-              <text class="dimension-text dimension-text-v" x="22" y="180" text-anchor="middle">1500 mm</text>
+              <path class="dimension-line" d="M30 342h548M30 337v10M578 337v10"/>
+              <text class="dimension-text" x="304" y="356" text-anchor="middle">3000 mm</text>
+              <path class="dimension-line" d="M14 22v304M9 22h10M9 326h10"/>
+              <text class="dimension-text" x="10" y="174" text-anchor="middle" transform="rotate(-90 10 174)">1500 mm</text>
             </svg>
             <p class="diagram-caption"><span class="legend-used"></span>Detallar <span class="legend-offcut"></span>Qalan sac</p>
           </div>
           <dl class="quote-result">
             <div><dt>Material çəkisi</dt><dd data-weight>21,7 kg</dd></div>
             <div><dt>Fire payı</dt><dd data-waste>69,3%</dd></div>
+            <div><dt>Kəsim yolu</dt><dd data-cutpath>24,0 m</dd></div>
             <div><dt>Hazır olma</dt><dd data-lead>2 iş günü</dd></div>
             <div class="result-price"><dt>İlkin qiymət</dt><dd data-price>76–91 ₼</dd></div>
           </dl>
@@ -201,99 +349,88 @@
       <noscript><p class="noscript-note">Canlı hesab üçün JavaScript lazımdır. <a href="materiallar.html">Material və başlanğıc qiymət cədvəlinə baxın</a> və ya ölçünü e-poçtla göndərin.</p></noscript>
     </section>
 
-    <section class="proof-strip" aria-label="Əsas istehsal göstəriciləri">
-      <dl>
-        <div><dt>Lazer masası</dt><dd>1500 × 3000 mm</dd></div>
-        <div><dt>Polad qalınlığı</dt><dd>0,8–16 mm</dd></div>
-        <div><dt>Ölçü toleransı</dt><dd>±0,20 mm-dən</dd></div>
-        <div><dt>Minimum sifariş</dt><dd>1 detal</dd></div>
-      </dl>
-    </section>
-
-    <section class="section capabilities" aria-labelledby="capabilities-title">
-      <div class="section-heading">
-        <h2 id="capabilities-title">Dörd proses.<br>Tək istehsal xətti.</h2>
-        <p>Hər prosesin həddi əvvəlcədən yazılıb. Çertyoju göndərməzdən əvvəl hansı əməliyyatın uyğun olduğunu yoxlaya bilərsiniz.</p>
-        <a class="text-link" href="imkanlar.html">Bütün texniki imkanlar</a>
+    <section class="processes" aria-labelledby="capabilities-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Texniki imkanlar</p><h2 id="capabilities-title">Dörd proses.<br>Hər birinin həddi yazılıb.</h2></div>
+        <p>Çertyoju göndərməzdən əvvəl hansı əməliyyatın detalınıza uyğun olduğunu yoxlaya bilərsiniz. <a class="text-link" href="imkanlar.html">Bütün texniki imkanlar</a></p>
       </div>
-      <div class="process-gallery">
-        <a class="gallery-card gallery-card-wide" href="lazer-kesim.html">
-          <img src="assets/img/laser-floor-v1.jpg" alt="Fiber lazer başlığı polad sacı kəsir" width="1942" height="817" loading="lazy">
-          <span><small>Fiber lazer</small><strong>Kəsim anında istilik yalnız konturdadır</strong></span>
-        </a>
-        <a class="gallery-card" href="keyfiyyet.html">
-          <img src="assets/img/quality-control-v1.jpg" alt="Metal detal ştangen-pərgarla ölçülür" width="1536" height="1024" loading="lazy">
-          <span><small>Son nəzarət</small><strong>Ölçü protokolu detal ilə birlikdə bağlanır</strong></span>
-        </a>
-      </div>
-      <div class="process-list">
-        <article>
+      <div class="process-grid">
+        <a class="process-card reveal" href="lazer-kesim.html">
+          <svg class="process-icon icon-laser" viewBox="0 0 120 80" aria-hidden="true"><rect x="8" y="46" width="104" height="22" rx="2" class="ic-plate"/><path class="ic-cut" d="M20 57H100"/><path class="ic-beam" d="M60 8V52"/><circle class="ic-spot" cx="60" cy="57" r="3"/></svg>
           <span class="process-code">LZR</span>
-          <div><h3><a href="lazer-kesim.html">Lazer kəsim</a></h3><p>Polad 16 mm-dək, paslanmaz 8 mm-dək, alüminium 6 mm-dək.</p></div>
+          <h3>Fiber lazer kəsim</h3>
+          <p>Polad 16 mm-dək, paslanmaz 8 mm-dək, alüminium 6 mm-dək.</p>
           <strong>±0,20 mm</strong>
-        </article>
-        <article>
+        </a>
+        <a class="process-card reveal" href="cnc-bukum.html">
+          <svg class="process-icon icon-bend" viewBox="0 0 120 80" aria-hidden="true"><path class="ic-die" d="M44 72 60 56 76 72Z"/><path class="ic-punch" d="M54 6h12v30l-6 10-6-10Z"/><path class="ic-sheet-l" d="M60 56H14"/><path class="ic-sheet-r" d="M60 56H106"/></svg>
           <span class="process-code">BKM</span>
-          <div><h3><a href="cnc-bukum.html">CNC büküm</a></h3><p>2200 mm iş eni, 80 ton güc, bucaq nəzarəti ilə təkrar istehsal.</p></div>
+          <h3>CNC büküm</h3>
+          <p>2200 mm iş eni, 80 ton güc, ilk detalda bucaq nəzarəti.</p>
           <strong>±0,5°</strong>
-        </article>
-        <article>
+        </a>
+        <a class="process-card reveal" href="qaynaq.html">
+          <svg class="process-icon icon-weld" viewBox="0 0 120 80" aria-hidden="true"><path class="ic-plate-a" d="M10 62H60V70H10Z"/><path class="ic-plate-b" d="M60 62H110V70H60Z"/><path class="ic-bead" d="M18 62H102"/><path class="ic-torch" d="M60 14l10 30"/></svg>
           <span class="process-code">QYN</span>
-          <div><h3><a href="qaynaq.html">MIG / TIG qaynaq</a></h3><p>Polad, paslanmaz və alüminium üçün ayrıca iş sahələri.</p></div>
+          <h3>MIG / TIG qaynaq</h3>
+          <p>Polad, paslanmaz və alüminium üçün ayrıca iş sahələri.</p>
           <strong>ISO 5817-C</strong>
-        </article>
-        <article>
+        </a>
+        <a class="process-card reveal" href="toz-boya.html">
+          <svg class="process-icon icon-coat" viewBox="0 0 120 80" aria-hidden="true"><rect x="58" y="14" width="50" height="56" rx="2" class="ic-panel"/><rect x="58" y="14" width="50" height="56" rx="2" class="ic-paint"/><path class="ic-gun" d="M10 36h18l6 6-6 6H10Z"/><g class="ic-spray"><circle cx="40" cy="38" r="1.6"/><circle cx="44" cy="44" r="1.4"/><circle cx="46" cy="34" r="1.2"/><circle cx="50" cy="42" r="1.5"/></g></svg>
           <span class="process-code">BYA</span>
-          <div><h3><a href="toz-boya.html">Toz boya</a></h3><p>RAL rəngləri, 60–100 μm örtük, 2,5 metrədək detal.</p></div>
+          <h3>Toz boya</h3>
+          <p>RAL rəngləri, 60–100 μm örtük, 2,5 metrədək detal.</p>
           <strong>48 saat</strong>
-        </article>
+        </a>
       </div>
     </section>
 
-    <section class="section production" aria-labelledby="production-title">
-      <div class="production-ledger">
-        <div class="section-heading section-heading-light">
-          <p class="job-code">Nümunə istehsal jurnalı</p>
-          <h2 id="production-title">Hər işin arxasında<br>aydın bir hesab.</h2>
-          <p>Vaxt, ölçü və material sərfi də təklifin içindədir. Aşağıdakı işlər xəyali nümunələrdir; real müştəri məlumatı deyil.</p>
-        </div>
-        <div class="ledger-table-wrap" tabindex="0" role="region" aria-label="Nümunə istehsal işləri cədvəli">
-          <table class="ledger-table">
-            <thead><tr><th>İş</th><th>Material</th><th>Ədəd</th><th>Proses</th><th>Vaxt</th><th>Nəticə</th></tr></thead>
-            <tbody>
-              <tr><td>Korpus paneli</td><td>S235 · 2 mm</td><td>48</td><td>Lazer + 4 büküm</td><td>3 gün</td><td>48 / 48 qəbul</td></tr>
-              <tr><td>Mətbəx rəfi</td><td>AISI 304 · 1,5 mm</td><td>12</td><td>Lazer + TIG</td><td>4 gün</td><td>Ra 0,8 səth</td></tr>
-              <tr><td>Montaj kronşteyni</td><td>5754 · 3 mm</td><td>120</td><td>Lazer + 2 büküm</td><td>5 gün</td><td>±0,3 mm</td></tr>
-              <tr><td>Mühafizə qapağı</td><td>S235 · 1 mm</td><td>30</td><td>Lazer + boya</td><td>4 gün</td><td>RAL 5015</td></tr>
-            </tbody>
-          </table>
-        </div>
+    <section class="board" aria-labelledby="production-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Nümunə istehsal jurnalı</p><h2 id="production-title">Hər işin arxasında<br>aydın bir hesab.</h2></div>
+        <p>Vaxt, ölçü və material sərfi də təklifin içindədir. Aşağıdakı işlər xəyali nümunələrdir; real müştəri məlumatı deyil.</p>
+      </div>
+      <div class="ledger-table-wrap" tabindex="0" role="region" aria-label="Nümunə istehsal işləri cədvəli">
+        <table class="ledger-table">
+          <thead><tr><th>İş</th><th>Material</th><th>Ədəd</th><th>Proses</th><th>Vaxt</th><th>Nəticə</th></tr></thead>
+          <tbody>
+            <tr><td><span class="job-id">AZ-2610-021</span>Dayaq kronşteyni</td><td>S235 · 3 mm</td><td>64</td><td>Lazer + büküm + MIG + boya</td><td>5 gün</td><td><span class="stamp">Qəbul</span></td></tr>
+            <tr><td><span class="job-id">AZ-2609-014</span>Korpus paneli</td><td>S235 · 2 mm</td><td>48</td><td>Lazer + 4 büküm</td><td>3 gün</td><td><span class="stamp">48 / 48</span></td></tr>
+            <tr><td><span class="job-id">AZ-2609-011</span>Mətbəx rəfi</td><td>AISI 304 · 1,5 mm</td><td>12</td><td>Lazer + TIG</td><td>4 gün</td><td><span class="stamp">Ra 0,8</span></td></tr>
+            <tr><td><span class="job-id">AZ-2609-007</span>Montaj kronşteyni</td><td>5754 · 3 mm</td><td>120</td><td>Lazer + 2 büküm</td><td>5 gün</td><td><span class="stamp">±0,3 mm</span></td></tr>
+            <tr><td><span class="job-id">AZ-2609-003</span>Mühafizə qapağı</td><td>S235 · 1 mm</td><td>30</td><td>Lazer + boya</td><td>4 gün</td><td><span class="stamp">RAL 5015</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="section quality" aria-labelledby="quality-title">
-      <div class="quality-card">
-        <div class="quality-photo"><img src="assets/img/quality-control-v1.jpg" alt="Texnik hazır metal detalın dəliyini ştangen-pərgarla ölçür" width="1536" height="1024" loading="lazy"><div class="gauge" aria-hidden="true"><span></span><span></span><span></span><span></span><i></i></div></div>
-        <div>
-          <h2 id="quality-title">Ölçülməyən detal hazır sayılmır</h2>
-          <p>İlk detal istehsalın başlanğıcında, son detal partiya bağlananda ölçülür. Protokolda nominal ölçü, faktiki nəticə, alət və nəzarət edən şəxs görünür.</p>
-          <a class="secondary-button" href="keyfiyyet.html">Nümunə ölçü protokolu</a>
-        </div>
+    <section class="quality" aria-labelledby="quality-title">
+      <div class="quality-photo">
+        <img src="assets/img/quality-control-v1.jpg" alt="Texnik hazır metal detalın dəliyini ştangen-pərgarla ölçür" width="1536" height="1024" loading="lazy">
+        <div class="caliper-display" aria-hidden="true"><span>mm</span><output data-caliper>320,08</output></div>
+      </div>
+      <div class="quality-copy">
+        <p class="eyebrow">Keyfiyyət</p>
+        <h2 id="quality-title">Ölçülməyən detal hazır sayılmır.</h2>
+        <p>İlk detal istehsalın başlanğıcında, son detal partiya bağlananda ölçülür. Protokolda nominal ölçü, faktiki nəticə, alət və nəzarət edən şəxs görünür.</p>
         <dl class="quality-values">
           <div><dt>Nominal</dt><dd>320,00 mm</dd></div>
           <div><dt>Faktiki</dt><dd>320,08 mm</dd></div>
           <div><dt>Fərq</dt><dd>+0,08 mm</dd></div>
           <div><dt>Status</dt><dd class="pass">Qəbul</dd></div>
         </dl>
+        <a class="secondary-button" href="keyfiyyet.html">Nümunə ölçü protokolu</a>
       </div>
     </section>
 
-    <section class="section final-cta">
-      <div>
-        <h2>Növbəti detalı<br>birlikdə hazırlayaq.</h2>
-        <p>Çertyoj, material, say. Yaxşı istehsal aydın tapşırıqdan başlayır.</p>
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="drop-zone">
+        <p class="formats" aria-hidden="true"><span>DXF</span><span>DWG</span><span>STEP</span><span>PDF</span></p>
+        <h2 id="cta-title">Növbəti detalı birlikdə hazırlayaq.</h2>
+        <p>Çertyoj, material, say. Texnoloq faylı yoxlayır, natamam yer varsa sualı ayrıca qaytarır.</p>
+        <a class="primary-button" href="teklif.html">Təklif sorğusu aç</a>
       </div>
-      <a class="primary-button" href="teklif.html">Təklif sorğusu aç</a>
     </section>
   </main>
 
