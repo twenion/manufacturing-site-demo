@@ -28,9 +28,12 @@ needs before sending a drawing: supported material and thickness, bed size,
 tolerance, minimum order, lead time and even an indicative price. The result is a
 long email exchange before either side knows whether the part is a fit.
 
-Kəsim starts with the opposite assumption. An interactive metal part moves from
-laser cutting to bending and coating. A full-width workshop photograph leads into
-the working quote bench. Enter a rectangular part's material, thickness,
+Kəsim starts with the opposite assumption. The first screen is a working laser
+bed: a fiber head cuts eight bracket blanks from one 1500 × 3000 mm sheet, inner
+contours before the outline, while the machine readout shows its real position in
+millimetres and the NC program it is executing. Scrolling then follows one of those
+blanks through the whole shop — cut, bent, welded, powder-coated and measured — and
+ends on its first-article protocol. The working quote bench follows. Enter a rectangular part's material, thickness,
 dimensions, quantity and follow-up operations; the page immediately publishes:
 
 - the best row-and-column layout on a 1500 × 3000 mm sheet;
@@ -52,10 +55,9 @@ offcut, weight and price results — the diagram cannot disagree with the number
 beside it.
 
 This creates a manufacturing-shaped page rather than a generic corporate site
-with different copy. Its structure borrows from a job traveller: specification
-fields, process abbreviations, dimensional marks and an inspection ledger. The
-isometric part, workshop photograph and animated nesting map show the work
-at three scales: finished part, factory and sheet.
+with different copy. Its structure borrows from shop documents: the job traveller
+stamps each operation as the part passes it, inner pages carry a drawing title
+block with their sheet number, and results are written as measurements.
 
 ## What is included
 
@@ -108,16 +110,21 @@ python tools/audit_selftest.py
   as a folder and hosted without a framework, package install or build service.
 - **No CDN.** All authored assets are in the repository, so rendering does not
   depend on a third party. The audit rejects remote runtime assets.
-- **Alloy and petrol identity.** Cool pale surfaces, deep petrol work areas, copper
-  cutting accents and large system sans headings bring the material into the page.
+- **Night-shift identity.** A graphite shop floor, brushed-steel surfaces, one laser
+  orange for anything hot or actionable, and RAL 5015 blue that appears only once a
+  part is coated. Headings use the system's condensed DIN face; uppercase labels use
+  the text face because common monospace fonts draw capital Ə at lowercase height.
   There is no font download.
 - **Project-owned photography.** Two original industrial images were created for
   this fictional brand and optimized locally; there is no stock-photo hotlink or
   third-party image request at runtime.
-- **Motion explains fabrication.** A single arrival sequence shows laser cutting,
-  bending and coating; three keyboard-accessible controls replay each state.
-  Workshop parallax follows scrolling and nesting reacts to dimensions.
-  `prefers-reduced-motion` removes animations, transitions and parallax.
+- **Motion explains fabrication.** The hero cut is driven by the same SVG contours
+  and NC lines that render statically without JavaScript; sparks are a canvas
+  overlay. It pauses off-screen, in hidden tabs and from a visible control. The
+  five-operation journey is a CSS 3D part driven only by scroll position. Nesting
+  parts are cut in as dimensions change, the job board stamps results and the
+  caliper display settles on its reading. `prefers-reduced-motion` shows every
+  finished state with no animation, pinning or parallax.
 - **Specification handoff.** The calculator pre-fills the RFQ using a URL fragment,
   never a server query. Invalid dimensions clear the estimate. Without JavaScript,
   the calculator and demo submit controls are hidden; the static content remains.
@@ -132,6 +139,6 @@ portfolio example, not as claims about a real manufacturer.
 ## Redesign verification (2026-10-08)
 
 Run the existing audit and fault-injection suite before publishing. Browser QA
-covers the three fabrication states, 320–1920 px homepage layouts, mobile menu
-and Escape, nesting bounds at minimum/maximum dimensions, 500-part rendering,
-price changes, invalid input and specification handoff.
+covers the hero cut cycle, every journey stage at 1440, 390 and 320 px, reduced
+motion, JavaScript disabled, inner-page title blocks, the 404 page, horizontal
+overflow and console errors.
