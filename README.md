@@ -28,9 +28,9 @@ needs before sending a drawing: supported material and thickness, bed size,
 tolerance, minimum order, lead time and even an indicative price. The result is a
 long email exchange before either side knows whether the part is a fit.
 
-Kəsim starts with the opposite assumption. A photo-led production scene establishes
-the workshop, and the working quote bench sits directly beneath it instead of being
-buried behind a generic contact CTA. Enter a rectangular part's material, thickness,
+Kəsim starts with the opposite assumption. An interactive metal part moves from
+laser cutting to bending and coating. A full-width workshop photograph leads into
+the working quote bench. Enter a rectangular part's material, thickness,
 dimensions, quantity and follow-up operations; the page immediately publishes:
 
 - the best row-and-column layout on a 1500 × 3000 mm sheet;
@@ -54,8 +54,8 @@ beside it.
 This creates a manufacturing-shaped page rather than a generic corporate site
 with different copy. Its structure borrows from a job traveller: specification
 fields, process abbreviations, dimensional marks and an inspection ledger. The
-photo rail, animated nesting map and pointer-reactive process cards show the work
-at three scales: factory, machine and finished part.
+isometric part, workshop photograph and animated nesting map show the work
+at three scales: finished part, factory and sheet.
 
 ## What is included
 
@@ -69,7 +69,7 @@ at three scales: factory, machine and finished part.
   then explicitly confirm that this demo sent no data.
 - Useful output with JavaScript disabled: every limit, material, process and
   contact fallback remains ordinary HTML.
-- Responsive layouts down to 390 px, keyboard focus, 44 px controls and reduced
+- Responsive layouts down to 320 px, keyboard focus, 44 px controls and reduced
   motion support.
 
 ## The bar it is held to
@@ -108,15 +108,19 @@ python tools/audit_selftest.py
   as a folder and hosted without a framework, package install or build service.
 - **No CDN.** All authored assets are in the repository, so rendering does not
   depend on a third party. The audit rejects remote runtime assets.
-- **System drafting typography.** Bahnschrift/DIN-style condensed headings make
-  the page read like an engineering work surface; plain system sans keeps forms
-  and tables practical. There is no font download.
+- **Alloy and petrol identity.** Cool pale surfaces, deep petrol work areas, copper
+  cutting accents and large system sans headings bring the material into the page.
+  There is no font download.
 - **Project-owned photography.** Two original industrial images were created for
   this fictional brand and optimized locally; there is no stock-photo hotlink or
   third-party image request at runtime.
-- **Motion follows intent.** One orchestrated hero entrance, pointer-positioned
-  gallery light, restrained card depth and responsive button feedback add energy;
-  `prefers-reduced-motion` removes the non-essential movement.
+- **Motion explains fabrication.** A single arrival sequence shows laser cutting,
+  bending and coating; three keyboard-accessible controls replay each state.
+  Workshop parallax follows scrolling and nesting reacts to dimensions.
+  `prefers-reduced-motion` removes animations, transitions and parallax.
+- **Specification handoff.** The calculator pre-fills the RFQ using a URL fragment,
+  never a server query. Invalid dimensions clear the estimate. Without JavaScript,
+  the calculator and demo submit controls are hidden; the static content remains.
 - **Fiction stays labelled.** Zeroed phone numbers, a reserved `.example` email,
   explicit demo notices and no invented clients, certificates or awards.
 
@@ -124,3 +128,10 @@ python tools/audit_selftest.py
 
 Code is MIT licensed. The fictional brand and demo content are provided as a
 portfolio example, not as claims about a real manufacturer.
+
+## Redesign verification (2026-10-08)
+
+Run the existing audit and fault-injection suite before publishing. Browser QA
+covers the three fabrication states, 320–1920 px homepage layouts, mobile menu
+and Escape, nesting bounds at minimum/maximum dimensions, 500-part rendering,
+price changes, invalid input and specification handoff.
