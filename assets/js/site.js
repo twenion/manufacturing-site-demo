@@ -3,31 +3,55 @@
 
   requestAnimationFrame(() => document.documentElement.classList.add('is-ready'));
 
-  const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (motionAllowed) {
-    document.querySelectorAll('.tilt-card').forEach((card) => {
-      card.addEventListener('pointermove', (event) => {
-        const bounds = card.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width;
-        const y = (event.clientY - bounds.top) / bounds.height;
-        card.style.setProperty('--x', `${Math.round(x * 100)}%`);
-        card.style.setProperty('--y', `${Math.round(y * 100)}%`);
-        card.style.transform = `perspective(900px) rotateX(${(0.5 - y) * 3}deg) rotateY(${(x - 0.5) * 3}deg) translateY(-4px)`;
-      });
-      card.addEventListener('pointerleave', () => {
-        card.style.removeProperty('transform');
-      });
-    });
-
-    document.querySelectorAll('.magnetic').forEach((button) => {
-      button.addEventListener('pointermove', (event) => {
-        const bounds = button.getBoundingClientRect();
-        const x = (event.clientX - bounds.left - bounds.width / 2) * .1;
-        const y = (event.clientY - bounds.top - bounds.height / 2) * .12;
-        button.style.transform = `translate(${x}px, ${y - 3}px)`;
-      });
-      button.addEventListener('pointerleave', () => button.style.removeProperty('transform'));
-    });
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const workshop = document.querySelector('.workshop-film');
+  if (workshop) {
+    let framePending = false;
+    const updateWorkshop = () => {
+      framePending = false;
+      const bounds = workshop.getBoundingClientRect();
+      if (motionPreference.matches) {
+        workshop.style.removeProperty('--travel');
+      } else if (bounds.bottom > 0 && bounds.top < window.innerHeight) {
+        const progress = (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height);
+        workshop.style.setProperty('--travel', `${(progress - .5) * 35}px`);
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!framePending) {
+        framePending = true;
+        requestAnimationFrame(updateWorkshop);
+      }
+    }, { passive: true });
+    motionPreference.addEventListener('change', updateWorkshop);
+    updateWorkshop();
+  }
+  const fabrication = document.querySelector('.fabrication');
+  if (fabrication) {
+    const descriptions = {
+      cut: 'Kontur kəsilir. Hər millimetr çertyoja uyğundur.',
+      bend: 'Düz sac forma alır. Büküm bucağı: 90°.',
+      finish: 'Səth qorunur. Detal montaja hazırdır.'
+    };
+    const processButtons = [...fabrication.querySelectorAll('[data-process]')];
+    const description = fabrication.querySelector('[data-stage-description]');
+    let timers = [];
+    const stopSequence = () => { timers.forEach(clearTimeout); timers = []; };
+    const setStage = (stage) => {
+      fabrication.dataset.stage = stage;
+      description.textContent = descriptions[stage];
+      processButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.process === stage)));
+    };
+    processButtons.forEach((button) => button.addEventListener('click', () => {
+      stopSequence();
+      setStage(button.dataset.process);
+    }));
+    // One short demonstration on arrival; user selection always takes priority.
+    if (!motionPreference.matches) {
+      timers = [setTimeout(() => setStage('bend'), 2800), setTimeout(() => setStage('finish'), 3900)];
+    }
+    motionPreference.addEventListener('change', stopSequence);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopSequence(); });
   }
 
   const menuButton = document.querySelector('.menu-toggle');
@@ -37,11 +61,19 @@
       const open = menuButton.getAttribute('aria-expanded') === 'true';
       menuButton.setAttribute('aria-expanded', String(!open));
       nav.classList.toggle('is-open', !open);
+      menuButton.querySelector('.sr-only').textContent = open ? 'Menyunu aç' : 'Menyunu bağla';
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+        menuButton.click();
+        menuButton.focus();
+      }
     });
   }
 
   const demoForms = document.querySelectorAll('[data-demo-form]');
   demoForms.forEach((demoForm) => {
+    demoForm.querySelectorAll('fieldset, button[type="submit"]').forEach((control) => { control.disabled = false; });
     demoForm.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!demoForm.reportValidity()) return;
@@ -52,6 +84,27 @@
       }
     });
   });
+
+  // Pass only the part specification in a fragment; it is not sent to the host.
+  const requestForm = document.querySelector('#rfq-material')?.form;
+  if (requestForm && location.hash.startsWith('#spec=')) {
+    const specification = new URLSearchParams(location.hash.slice(6));
+    const materials = { steel: 'Qara polad S235', stainless: 'Paslanmaz polad AISI 304', aluminium: 'Alüminium 5754' };
+    const materialName = materials[specification.get('material')];
+    if (materialName) requestForm.elements.material.value = materialName;
+    const thicknessValue = Number(specification.get('thickness'));
+    const countValue = Number(specification.get('quantity'));
+    const widthValue = Number(specification.get('width'));
+    const heightValue = Number(specification.get('height'));
+    if (thicknessValue >= 1 && thicknessValue <= 6) requestForm.elements.thickness.value = `${thicknessValue} mm`;
+    if (Number.isInteger(countValue) && countValue >= 1 && countValue <= 500) requestForm.elements.quantity.value = countValue;
+    if (widthValue >= 20 && widthValue <= 1450 && heightValue >= 20 && heightValue <= 2950) {
+      requestForm.elements.notes.value = `Düzbucaqlı detal: ${widthValue} × ${heightValue} mm.`;
+    }
+    if (specification.has('bend')) requestForm.elements.process.value = 'Lazer + büküm';
+    if (specification.has('coat')) requestForm.elements.finish.value = 'Toz boya';
+    else if (specification.has('deburr')) requestForm.elements.finish.value = 'Kənar təmizləmə';
+  }
 
   const form = document.querySelector('[data-quote-form]');
   if (!form) return;
@@ -79,6 +132,11 @@
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
   function calculate() {
+    if (!form.checkValidity()) {
+      Object.values(output).forEach((element) => { element.textContent = '—'; });
+      partsGroup.replaceChildren();
+      return;
+    }
     const selected = material.options[material.selectedIndex];
     const density = Number(selected.dataset.density);
     const materialRate = Number(selected.dataset.rate);
@@ -89,7 +147,7 @@
     const gap = 8;
 
     const normalCols = Math.max(1, Math.floor(3000 / (w + gap)));
-    const normalRows = Math.max(1, Math.floor(1500 / (h + gap)));
+    const normalRows = Math.floor(1500 / (h + gap));
     const rotatedCols = Math.max(1, Math.floor(3000 / (h + gap)));
     const rotatedRows = Math.max(1, Math.floor(1500 / (w + gap)));
     const normalCapacity = normalCols * normalRows;
@@ -132,25 +190,32 @@
     const usableHeight = 304;
     const partW = (rotated ? h : w) / 3000 * usableWidth;
     const partH = (rotated ? w : h) / 1500 * usableHeight;
-    const gapX = Math.min(4, Math.max(1.2, (usableWidth - cols * partW) / Math.max(cols, 1)));
+    const gapX = 8 / 3000 * usableWidth;
+    const gapY = 8 / 1500 * usableHeight;
 
     partsGroup.replaceChildren();
-    const visible = Math.min(count, 120);
+    const visible = count;
     for (let index = 0; index < visible; index += 1) {
       const col = index % cols;
       const row = Math.floor(index / cols);
       const rect = document.createElementNS(ns, 'rect');
       rect.setAttribute('class', 'part');
       rect.setAttribute('x', String(marginX + col * (partW + gapX)));
-      rect.setAttribute('y', String(marginY + row * (partH + gapX)));
+      rect.setAttribute('y', String(marginY + row * (partH + gapY)));
       rect.setAttribute('width', String(Math.max(2, partW)));
       rect.setAttribute('height', String(Math.max(2, partH)));
       rect.setAttribute('rx', '1');
+      rect.style.setProperty('--part-index', String(Math.min(index, 45)));
       partsGroup.append(rect);
     }
   }
 
   form.addEventListener('input', calculate);
   form.addEventListener('change', calculate);
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    location.href = `teklif.html#spec=${new URLSearchParams(new FormData(form))}`;
+  });
   calculate();
 })();
