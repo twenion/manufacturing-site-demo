@@ -181,7 +181,7 @@
         if (wait <= 0) {
           if (stepIndex >= steps.length) {
             phase = 'change';
-            hud.mode.textContent = 'Sac dəyişir';
+            hud.mode.textContent = 'Təbəqə dəyişir';
             emit('M60');
             sheet.classList.add('is-leaving');
             wait = 1.2;
@@ -198,7 +198,7 @@
           stepIndex = 0;
           phase = 'wait';
           wait = 1.3;
-          hud.mode.textContent = 'Sac hazırdır';
+          hud.mode.textContent = 'Təbəqə hazırdır';
         }
       } else if (phase === 'rapid') {
         const { start } = steps[stepIndex].contour;
@@ -502,7 +502,7 @@
     const upper = Math.round(estimate * 1.10);
     const lead = count <= 30 ? 2 : count <= 100 ? 3 : count <= 250 ? 5 : 7;
 
-    output.layout.textContent = `${cols} × ${rows} / ${sheets} sac`;
+    output.layout.textContent = `${cols} × ${rows} / ${sheets} təbəqə`;
     output.utilization.textContent = `${decimal(utilization)}%`;
     output.weight.textContent = `${decimal(weight)} kg`;
     output.waste.textContent = `${decimal(100 - utilization)}%`;
